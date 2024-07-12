@@ -12,6 +12,8 @@ class ProfessorForm extends Form
 {
     public ?Professor $professor;
 
+    public $id;
+
     #[Rule('required|min:3', as: 'Nome')]
     public $name;
 

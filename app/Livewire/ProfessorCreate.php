@@ -16,8 +16,10 @@ class ProfessorCreate extends Component
         $save = $this->form->store();
 
         is_null($save)
-        ? $this->dispatch('notify', title:'success', message:'')
-        : $this->dispatch('notify', title:'failed', message:'');
+        ? $this->dispatch('notify', title:'success', message:'Professor Adicionado com Sucesso!')
+        : $this->dispatch('notify', title:'failed', message:'Algo Deu Errado...');
+
+        $this->dispatch('dispatch-professor-create-save')->to(ProfessorsTable::class);
     }
 
     public function render()
